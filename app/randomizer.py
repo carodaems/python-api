@@ -3,10 +3,6 @@ from random import randint
 
 app = FastAPI()
 
-@app.get("/percentage")
-async def get_random_percentage():
-    return {'percentage': randint(0, 100)}
-
 @app.get("/percentage/{lower_limit}/{upper_limit}")
 async def get_random_percentage1(lower_limit: int, upper_limit: int):
     if(lower_limit >= upper_limit):
